@@ -21,6 +21,16 @@ function ToDoList() {
     const updateTasks = tasks.filter((t, i) => i !== index);
     setTasks(updateTasks);
   }
+  function moveTaskUp(index) {
+    if (index > 0) {
+      const updateTasks = [...tasks];
+      [updateTasks[index], updateTasks[index - 1]] = [
+        updateTasks[index - 1],
+        updateTasks[index],
+      ];
+      setTasks(updateTasks);
+    }
+  }
 
   return (
     <div className="to-do-list">
@@ -40,15 +50,13 @@ function ToDoList() {
       <ol>
         {tasks.map((task, index) => (
           <li className="task" key={index}>
-            <label htmlFor="check-mark" className="custom-checkbox">
-              <input type="checkbox" id="check-mark" />
-              <span className="checkmark"></span>
-            </label>
             <span className="text">{task}</span>
             <button className="delete-button" onClick={() => deleteTask(index)}>
               Delete
             </button>
-            <button className="move-button">⬆</button>
+            <button className="move-button" onClick={() => moveTaskUp(index)}>
+              ⬆
+            </button>
             <button className="move-button">⬇</button>
           </li>
         ))}
