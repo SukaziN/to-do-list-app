@@ -32,6 +32,17 @@ function ToDoList() {
     }
   }
 
+  function moveTaskDown(index) {
+    const updateTasks = [...tasks];
+    if (index !== -1 && index < updateTasks.length - 1) {
+      const taskToMove = updateTasks[index];
+
+      updateTasks[index] = updateTasks[index + 1];
+      updateTasks[index + 1] = taskToMove;
+      setTasks(updateTasks);
+    }
+  }
+
   return (
     <div className="to-do-list">
       <h1>To-Do List 🗒✍</h1>
@@ -57,7 +68,9 @@ function ToDoList() {
             <button className="move-button" onClick={() => moveTaskUp(index)}>
               ⬆
             </button>
-            <button className="move-button">⬇</button>
+            <button className="move-button" onClick={() => moveTaskDown(index)}>
+              ⬇
+            </button>
           </li>
         ))}
       </ol>
