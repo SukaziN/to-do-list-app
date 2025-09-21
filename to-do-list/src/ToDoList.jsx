@@ -1,7 +1,7 @@
 function ToDoList() {
   return (
     <div className="to-do-list">
-      <h1>To-Do List</h1>
+      <h1>To-Do List 🗒✍</h1>
 
       <div className="task-input">
         <input type="text" value="" placeholder="Enter a task..." />
@@ -9,8 +9,9 @@ function ToDoList() {
       </div>
       <ol>
         <li className="task">
-          <label htmlFor="check-mark">
+          <label htmlFor="check-mark" className="custom-checkbox">
             <input type="checkbox" id="check-mark" />
+            <span className="checkmark"></span>
           </label>
           <span className="text">Go for a jog</span>
           <button className="delete-button">Delete</button>
