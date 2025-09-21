@@ -1,10 +1,23 @@
+import { useState } from "react";
+
 function ToDoList() {
+  const [tasks, setTasks] = useState([""]);
+  const [newTask, setNewTask] = useState("");
+
+  function handleInputChange(event) {
+    setNewTask(event.target.value);
+  }
   return (
     <div className="to-do-list">
       <h1>To-Do List 🗒✍</h1>
 
       <div className="task-input">
-        <input type="text" value="" placeholder="Enter a task..." />
+        <input
+          type="text"
+          value={newTask}
+          placeholder="Enter a task..."
+          onChange={handleInputChange}
+        />
         <button className="add-button">Add</button>
       </div>
       <ol>
