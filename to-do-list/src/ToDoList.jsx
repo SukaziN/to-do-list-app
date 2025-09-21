@@ -9,7 +9,10 @@ function ToDoList() {
       </div>
       <ol>
         <li>
-          <span className="text">{}</span>
+          <label htmlFor="check-mark">
+            <input type="checkbox" id="check-mark" />
+          </label>
+          <span className="text">Go for a jog</span>
           <button className="delete-button">Delete</button>
           <button className="move-button">⬆</button>
           <button className="move-button">⬇</button>
