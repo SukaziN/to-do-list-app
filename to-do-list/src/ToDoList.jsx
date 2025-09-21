@@ -1,14 +1,14 @@
 function ToDoList() {
   return (
-    <div>
+    <div className="to-do-list">
       <h1>To-Do List</h1>
 
-      <div>
+      <div className="task-input">
         <input type="text" value="" placeholder="Enter a task..." />
         <button className="add-button">Add</button>
       </div>
       <ol>
-        <li>
+        <li className="task">
           <label htmlFor="check-mark">
             <input type="checkbox" id="check-mark" />
           </label>
