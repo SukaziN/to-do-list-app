@@ -43,7 +43,6 @@ h1 {
   display: inline-block;
   position: relative;
   vertical-align: middle;
-  margin-right: 5px;
 }
 .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
   content: "\2713";
@@ -53,21 +52,27 @@ h1 {
   color: rgb(6, 192, 6);
   top: 0px;
   left: 3px;
+  margin-left: 0;
 }
 ol {
   list-style: none;
 }
 li {
   background: rgba(238, 234, 234, 0.509);
-  margin-bottom: 5px;
   padding: 5px;
   border: 1px solid rgba(128, 128, 128, 0.495);
   border-radius: 4px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .text {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 0%;
+  display: flex;
+  justify-content: flex-start;
 }
 .delete-button {
   background-color: red;
