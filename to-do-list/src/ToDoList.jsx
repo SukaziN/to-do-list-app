@@ -17,6 +17,10 @@ function ToDoList() {
       setNewTask("");
     }
   }
+  function deleteTask(index) {
+    const updateTasks = tasks.filter((t, i) => i !== index);
+    setTasks(updateTasks);
+  }
 
   return (
     <div className="to-do-list">
@@ -41,7 +45,9 @@ function ToDoList() {
               <span className="checkmark"></span>
             </label>
             <span className="text">{task}</span>
-            <button className="delete-button">Delete</button>
+            <button className="delete-button" onClick={() => deleteTask(index)}>
+              Delete
+            </button>
             <button className="move-button">⬆</button>
             <button className="move-button">⬇</button>
           </li>
